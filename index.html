@@ -1,15 +1,144 @@
 <!DOCTYPE html>
-<html>
 <head>
-<style>
-body {background-color: powderblue;}
-h1   {color: blue;}
-p    {color: red;}
-</style>
+    <title>eBoss Reg-Template</title>
+    <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script language="javascript">
+            var message="Right-mouse click has been disabled.";
+            function click(e)
+            {
+              if (document.all)
+              {
+                if (event.button==2||event.button==3)
+                {
+                  alert(message);
+                  return false;
+                }
+              }
+              else
+              {
+                if (e.button==2||e.button==3)
+                {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  alert(message);
+                  return false;
+                }
+              }
+              if (e.which)
+              {
+                
+              }
+            }
+            
+            if (document.all) // for IE
+            {
+              document.onmousedown=click;
+            }
+            else // for FF & Chrome
+            {
+              document.onclick=click;  
+              document.oncontextmenu=click;
+            }
+            
+            </script>
+            
+<link href="./styles/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <img src="#top_logo.png" alt="eBoss logo" width="80" height="58" hspace="0" vspace="0" border="0" align="top">                
+</div>
 </head>
 <body>
+    
+    <div class="container">
+        
+        <form action="" method="POST" role="form">
+            <legend>Input Attendees Data</legend>
+            <form class="needs-validation" novalidate>     
+            <div class="form-group">
+                <label for="validationTooltip01"><strong>First Name</strong></label>
+                <input type="text" class="form-control" id="validationTooltip01" placeholder="Obrien" value="" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
+            <div class="form-group">
+                <label for="validationTooltip02"><strong>Last Name</strong></label>
+                <input type="text" class="form-control" id="validationTooltip02" placeholder="Wright" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+        
+            <div class="form-group">
+                    <label for="validationTooltip03"><strong>Email</strong></label>
+                <input type="text" class="form-control" id="validationTooltip03" placeholder="name@example.com" required>
+                <div class="invalid-feedback">
+                    Please provide a valid email address
+                </div>
+                    
+            </div>
+
+            <div class="form-group">
+                    <label for="validationTooltip04"><strong>Telephone</strong></label>
+                    <input type="text" class="form-control" id="validationTooltip04" placeholder="08000000000" required>
+                    <div class="valid-feedback">
+                        Please enter your Telephone!
+                    </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="validationTooltip05"><strong>Gender</strong></label>
+                <select class="custom-select" required>
+                <option selected>Choose Gender...</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                </select>
+                    <div class="valid-feedback">
+                        Please choose a Gender!
+                    </div>
+            </div>
+                        
+                                
+                                          
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="unchecked">
+                    Agree to the terms and conditions
+                </label>
+                </div>
+                
+        <a href="\BootstrapDemo\form.html" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Register</a>
+            </form>
+        </form>
+        
+    </div>
+    
+    <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+              'use strict';
+              window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                  form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              }, false);
+            })();
+            </script>
+            
 
 </body>
+</html>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+</body>
+</html>
